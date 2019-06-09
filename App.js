@@ -74,15 +74,11 @@ function RemoteController(userInterface, data) {
             userInterface.getOverviewListView().childNodes[currentIndex % MAX_CELLS_DISPLAYED].classList.remove('highlighted');
             if(keyCode === 37) {
                 currentIndex = currentIndex > 0 ? currentIndex - 1 : currentIndex;
-                if(currentIndex >= 0) {
-                    scrollLeft(userInterface, currentIndex);
-                }
+                scrollLeft(userInterface, currentIndex);
             }
             else {
                 currentIndex = currentIndex < data.length - 1 ? currentIndex + 1 : currentIndex;
-                if(currentIndex <= data.length - 1) {
-                    scrollRight(userInterface, currentIndex);
-                }
+                scrollRight(userInterface, currentIndex);
             }
             state.currentIndex = currentIndex;
         }
