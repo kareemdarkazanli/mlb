@@ -107,7 +107,7 @@ function RemoteController(userInterface, data) {
 
 function APIs() {
     async function getMLBStats(date) {
-        const response = await fetch(`http://statsapi.mlb.com/api/v1/schedule?hydrate=game(content(editorial(recap))),decisions&date=2019-06-02&sportId=1`);
+        const response = await fetch(`http://statsapi.mlb.com/api/v1/schedule?hydrate=game(content(editorial(recap))),decisions&date=2018-06-10&sportId=1`);
         const stats = await response.json();
         return stats;
     }   
@@ -118,7 +118,6 @@ function APIs() {
 
 function Helpers() {
     const parseDataForOverview = (data) => {
-        console.log(data)
         const {dates=[]} = data;
         const {games=[]} = dates[0];
         
