@@ -1,13 +1,22 @@
 #root {
-
+    outline: 0;
 }
 
 
+.overview-container {
+    display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+#overview-listview {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
 .overview-cell {
     float: left;
     border: 1px solid black;
-    height: 322px;
-    width: 250px;
+    height: 193px;
+    width: 150px;
     transition: width .2s linear;
     transition: height .2s linear;
 }
@@ -16,13 +25,9 @@
     margin: 0;
 }
 
-.overview-cell.scroll-to-right {
-    transform: translateX(-150%)
-}
-
 .overview-cell.highlighted {
-    height: 450px;
-    width: 350px;
+    height: 322px;
+    width: 250px;
     transition: width .2s linear;
     transition: height .2s linear;
 }

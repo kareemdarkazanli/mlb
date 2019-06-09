@@ -35,7 +35,7 @@ function UserInterface() {
         for(let i = start; i < end; i++) {
             listItems += overviewCell(data[i]);
         }
-        root.innerHTML = `<ul id='overview-listview'>${listItems}</ul>`
+        root.innerHTML = `<div class='overview-container'><ul id='overview-listview'>${listItems}</ul></div>`
         
     }
     
