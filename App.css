@@ -16,8 +16,8 @@
 }
 .overview-cell {
     float: left;
-    height: 210px;
-    width: 150px;
+    height: 229px;
+    width: 167px;
     color: white;
     transition: height .2s linear;
 }

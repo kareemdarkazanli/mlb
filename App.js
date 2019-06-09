@@ -1,5 +1,3 @@
-/*eslint-env browser*/
-
 const helpers = new Helpers();
 const apis = new APIs();
 const MAX_CELLS_DISPLAYED = 5;
@@ -7,7 +5,7 @@ const MAX_CELLS_DISPLAYED = 5;
 
 
 async function init() {
-    const mlbStats = await apis.getMLBStats(); 
+    const mlbStats = await apis.getMLBStats();
     const overviewData = helpers.parseDataForOverview(mlbStats)
     const userInterface = new UserInterface();
     const remoteController = new RemoteController(userInterface, overviewData);
@@ -108,8 +106,8 @@ function RemoteController(userInterface, data) {
 }
 
 function APIs() {
-    async function getMLBStats() {
-        const response = await fetch('http://statsapi.mlb.com/api/v1/schedule?hydrate=game(content(editorial(recap))),decisions&date=2018-06-10&sportId=1');
+    async function getMLBStats(date) {
+        const response = await fetch(`http://statsapi.mlb.com/api/v1/schedule?hydrate=game(content(editorial(recap))),decisions&date=2019-06-02&sportId=1`);
         const stats = await response.json();
         return stats;
     }   
