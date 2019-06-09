@@ -24,12 +24,13 @@
 
 .overview-cell p {
     margin: 0;
+    font-family: Arial;
 }
 
 .overview-cell .headline {
     max-height: 32px;
     overflow: hidden;
-    padding: 8px;
+    padding-bottom: 10px;
     transition: opacity .2s linear;
     opacity: 0;
 }
@@ -39,9 +40,8 @@
 }
 
 .overview-cell .blurb {
-    height: 105px;
-    font-size: 14px;
-    padding: 8px;
+    font-size: 12px;
+    padding-top: 2px;
     overflow: hidden;
     transition: opacity .2s linear;
     opacity: 0;
