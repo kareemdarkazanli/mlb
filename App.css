@@ -4,20 +4,19 @@
 
 
 .overview-container {
-    display: table;   /* Allow the centering to work */
+    display: table; 
 	margin: 0 auto;
 }
 #overview-listview {
     display: flex;
     align-items: center;
     list-style: none;
+    min-height: 600px;
 }
 .overview-cell {
     float: left;
-    border: 1px solid black;
-    height: 193px;
+    height: 210px;
     width: 150px;
-    transition: width .2s linear;
     transition: height .2s linear;
 }
 
@@ -25,9 +24,37 @@
     margin: 0;
 }
 
+.overview-cell .headline {
+    max-height: 32px;
+    overflow: hidden;
+    padding: 8px;
+    transition: opacity .2s linear;
+    opacity: 0;
+}
+
+.overview-cell.highlighted .headline {
+    opacity: 1;
+}
+
+.overview-cell .blurb {
+    height: 105px;
+    font-size: 14px;
+    padding: 8px;
+    overflow: hidden;
+    transition: opacity .2s linear;
+    opacity: 0;
+}
+
+.overview-cell.highlighted .blurb {
+    opacity: 1;
+}
+
+.overview-cell img {
+    object-fit: cover;
+    width: 100%;
+}
+
 .overview-cell.highlighted {
     height: 322px;
     width: 250px;
-    transition: width .2s linear;
-    transition: height .2s linear;
 }

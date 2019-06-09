@@ -21,10 +21,13 @@ function UserInterface() {
     const overviewCell = (item) => {
         
         const {headline, blurb, image} = item;
+        const {title, altText, cuts} = image;
         
         return (
         `<li class='overview-cell'>
-            <p>${headline}</p>
+            <p class='headline'>${headline}</p>
+            <img src=${cuts[6].src} title=${title} alt=${altText}/>
+            <p class='blurb'>${blurb}</p>
         </li>`
         )
     }
@@ -35,7 +38,12 @@ function UserInterface() {
         for(let i = start; i < end; i++) {
             listItems += overviewCell(data[i]);
         }
-        root.innerHTML = `<div class='overview-container'><ul id='overview-listview'>${listItems}</ul></div>`
+        if(getOverviewListView()) {
+           getOverviewListView().innerHTML = listItems; 
+        }
+        else {
+            root.innerHTML = `<div class='overview-container'><ul id='overview-listview'>${listItems}</ul></div>`
+        }
         
     }
     
